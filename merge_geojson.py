@@ -48,5 +48,8 @@ def merge_geojson(filename1, filename2, outputfilename):
 
 
 if __name__ == '__main__':
+    merge_geojson('geometry/pasarrebo.geojson', 'geometry/ciracas.geojson',
+                  'geometry/pasarrebo_ciracas.geojson')
+
     merge_geojson('geometry/pasarminggu.geojson', 'geometry/jagakarsa.geojson',
                   'geometry/pasarminggu_jagakarsa.geojson')

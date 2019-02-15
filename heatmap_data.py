@@ -60,17 +60,21 @@ def update_geojson():
     for filename in list_geojson:
         kecamatan = filename.replace('.geojson', '')
         filename = 'geometry/{}'.format(filename)
-        
+
         data_geojson = open_geojson(filename)
-            
+
         if kecamatan in data:
-            data_geojson['features'][0]['properties']['imsi'] = data[kecamatan]['imsi']
-            data_geojson['features'][0]['properties']['msisdn'] = data[kecamatan]['msisdn']
+            data_geojson['features'][0]['properties']['imsi'] = data[
+                kecamatan]['imsi']
+            data_geojson['features'][0]['properties']['msisdn'] = data[
+                kecamatan]['msisdn']
         else:
             data_geojson['features'][0]['properties']['imsi'] = 0
             data_geojson['features'][0]['properties']['msisdn'] = 0
 
         save_geojson(filename, data_geojson)
 
+
 if __name__ == '__main__':
+    create_json()
     update_geojson()
